@@ -1,56 +1,12 @@
 <!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>간단 청첩장 메이커</title>
-  <link rel="stylesheet" href="./styles.css">
-</head>
-<body>
-  <main class="layout">
-    <section class="panel form-panel">
-      <h1>청첩장 만들기</h1>
-      <p class="sub">정보를 입력하면 오른쪽 카드가 바로 바뀝니다.</p>
-
-      <label>신랑 이름
-        <input id="groomName" type="text" value="김민수">
-      </label>
-      <label>신부 이름
-        <input id="brideName" type="text" value="이서연">
-      </label>
-      <label>예식 날짜
-        <input id="weddingDate" type="date">
-      </label>
-      <label>예식 시간
-        <input id="weddingTime" type="time" value="13:00">
-      </label>
-      <label>예식 장소
-        <input id="venue" type="text" value="라온웨딩홀 3층 그랜드홀">
-      </label>
-      <label>메시지
-        <textarea id="message" rows="4">두 사람이 하나가 되는 날, 소중한 걸음으로 함께 축복해 주세요.</textarea>
-      </label>
-
-      <div class="actions">
-        <button id="printBtn" type="button">청첩장 인쇄하기</button>
-        <button id="resetBtn" type="button" class="ghost">기본값으로</button>
-      </div>
-    </section>
-
-    <section class="panel preview-panel">
-      <div id="inviteCard" class="invite-card">
-        <p class="small">Wedding Invitation</p>
-        <h2><span id="pvGroom">김민수</span> &amp; <span id="pvBride">이서연</span></h2>
-        <p id="pvMessage" class="msg">두 사람이 하나가 되는 날, 소중한 걸음으로 함께 축복해 주세요.</p>
-        <div class="detail">
-          <p id="pvDate">날짜를 선택해 주세요</p>
-          <p id="pvTime">13:00</p>
-          <p id="pvVenue">라온웨딩홀 3층 그랜드홀</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <script src="./script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>청첩장 메이커</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
