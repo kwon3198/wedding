@@ -1,4 +1,4 @@
-import { ChangeEvent, useMemo, useState } from "react";
+﻿import { ChangeEvent, useMemo, useState } from "react";
 
 type InviteForm = {
   groom: string;
@@ -11,17 +11,17 @@ type InviteForm = {
 
 const defaults: InviteForm = {
   groom: "김민수",
-  bride: "이서연",
-  date: "",
+  bride: "이서윤",
+  date: "2026-05-23",
   time: "13:00",
-  venue: "라온웨딩홀 3층 그랜드홀",
-  message: "두 사람이 하나가 되는 날, 소중한 걸음으로 함께 축복해 주세요."
+  venue: "아모르 가든 3층 그레이스홀",
+  message: "서로의 계절이 되어준 두 사람이 같은 방향으로 천천히 걸어가려 합니다. 소중한 날, 함께 축복해 주세요."
 };
 
 function formatDate(value: string): string {
   if (!value) return "날짜를 선택해 주세요";
   const [year, month, day] = value.split("-");
-  return `${year}년 ${Number(month)}월 ${Number(day)}일`;
+  return `${year}. ${Number(month)}. ${Number(day)}`;
 }
 
 export default function App() {
@@ -48,8 +48,9 @@ export default function App() {
   return (
     <main className="layout">
       <section className="panel form-panel">
-        <h1>청첩장 만들기</h1>
-        <p className="sub">정보를 입력하면 오른쪽 카드가 바로 바뀝니다.</p>
+        <p className="eyebrow">Wedding Builder</p>
+        <h1>청첩장 미리보기</h1>
+        <p className="sub">왼쪽에서 입력하면 오른쪽 카드가 바로 업데이트됩니다.</p>
 
         <label>
           신랑 이름
@@ -72,22 +73,23 @@ export default function App() {
           <input type="text" value={form.venue} onChange={updateField("venue")} />
         </label>
         <label>
-          메시지
+          초대 메시지
           <textarea rows={4} value={form.message} onChange={updateField("message")} />
         </label>
 
         <div className="actions">
           <button type="button" onClick={() => window.print()}>
-            청첩장 인쇄하기
+            청첩장 인쇄
           </button>
           <button type="button" className="ghost" onClick={() => setForm(defaults)}>
-            기본값으로
+            기본값 복원
           </button>
         </div>
       </section>
 
       <section className="panel preview-panel">
         <div className="invite-card">
+          <div className="glow" />
           <p className="small">Wedding Invitation</p>
           <h2>
             <span>{view.groom}</span> &amp; <span>{view.bride}</span>
